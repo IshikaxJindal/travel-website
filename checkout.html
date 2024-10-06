@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+    rel="stylesheet">
+    <title>Document</title>
+    <style>
+
+        body {
+          font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      .layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        bottom: -150px;
+      }
+
+      .box {
+        height: 500px;
+        width: 380px;
+        border: 1px solid #c0baba;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .head1 {
+        position: absolute;
+        left: 7px;
+        font-weight: bold;
+      }
+
+      .space {
+        width: 336px;
+        height: 30px;
+      }
+
+      .head2 {
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+      }
+
+      .button1 {
+        background-color: orangered;
+        color: white;
+        width: 202px;
+        height: 47px;
+        position: relative;
+        top: 61px;
+        left: 14px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .button2 {
+        background-color: orangered;
+        color: white;
+        width: 202px;
+        height: 47px;
+        position: relative;
+        top: 119px;
+        left: 20px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .button3 {
+        background-color:white;
+        color: black;
+        width: 204px;
+        height: 47px;
+        position: relative;
+        top: 207px;
+        left: 20px;
+        border-radius: 5px;
+        font-weight: bold;
+
+      }
+
+      .para {
+        font-weight: 500;
+        position: relative;
+        right: -23px;
+        top: 10px;
+        font-size: 16px;
+      }
+
+      ul {
+        font-size: 16px;
+        position: relative;
+        top: -28px;
+        font-weight: 500;
+      }
+
+      .head3 {
+        position: absolute;
+        left: 7px;
+        font-weight: bold;
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        right: -8px;
+        top: 106px;
+      }
+      img{
+        height: 29px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .content3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+      .content1{
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        left: 14px; 
+        top:-23px     
+      
+      }
+      .content2{
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        left: 15px;
+        top: -46px;
+      }
+      .feedback{
+        color: gray;
+        position: relative;
+        left: 1100px;
+        top: 87px;
+      }
+
+      .seperation{
+        height: 1px;
+        background-color: #f3f0f0;
+        position: relative;
+        top:-38px
+      }
+      .check2{
+        position: relative;
+        left: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="" class="feedback">Give feedback</a>
+    <div class="title"><h1>HOW WOULD YOU LIKE TO CHECKOUT PAGE TODAY?</h1></div>
+    <div class="layout">
+      <box class="box">
+        <div class="head1">
+          <h3>NIKE/NIKE+ MEMBERS</h3>
+          <br /><br />
+          <div class="seperation"></div>
+
+          <form action="post">
+            <div>
+              <label for="Email" class="head1">Email</label>
+              <br /><br />
+              <input
+                type="text"
+                id="Email"
+                placeholder="Enter Email id"
+                class="space"
+              />
+            </div>
+            <br /><br />
+
+            <div>
+              <label for="Password" class="head1">Password</label>
+              <br /><br />
+              <input
+                type="text"
+                id="password"
+                placeholder="Enter Password"
+                class="space"
+              />
+            </div>
+            <br />
+
+            <div>
+              <input
+                type="checkbox"
+                id="Subscribe"
+                name="checkbox"
+                value="yes"
+              />
+              <label for="subscribe">Keep me logged in</label>
+            </div>
+            <br />
+
+            <a href="">forgotten your password</a>
+
+            <button class="button1">MEMBER CHECKOUT</button>
+          </form>
+        </div>
+      </box>
+      <box class="box">
+        <div class="head2">
+          <h3>GUESTS</h3>
+          <br /><br />
+          <div class="seperation"></div>
+
+          <form action="post" class="check2">
+            <div>
+              <input
+                type="checkbox"
+                id="Subscribe"
+                name="checkbox"
+                value="yes"
+              />
+              <label for="subscribe">Yes, I want FREE Delivery</label>
+            </div>
+          </form>
+
+          <div class="para">Join Nike+ and you will get</div>
+          <br /><br />
+
+          <ul>
+            <li>Free delivery and no hassie returns on all order</li>
+            <li>The latest and greatest gear for you</li>
+            <li>Expert guidence whatever your goals are</li>
+            <li>Access to workout and incredible events</li>
+          </ul>
+
+          <button class="button2">MEMBER CHECKOUT</button>
+        </div>
+      </box>
+      <box class="box">
+        <div class="head3">
+          <h3>PAYPAL MEMBERS</h3>
+          <br><br>
+          <div class="seperation"></div>
+
+          <br />
+          <div class="content1" >Make your payment with paypal secure system</div>
+          <br /><br />
+          <div class="content2">
+            you'll have a chance to apply promotion codes and/or gift before
+            complete your orders
+          </div>
+
+          <button class="button3">
+            <div class="content3">Check out with<img src="paypal logo.png"></img></div>
+        </button>
+        </div>
+      </box>
+    </div>
+  </body>
+</html>
