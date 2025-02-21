@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Budget Analysis</title>
+    <style>
+        /* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+} */
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(cultural3.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+    width: 150%;
+    max-width: 400px;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #000000;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 106%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    margin-top: 20px;
+    color:#fa1010;
+}
+
+#destinations p {
+    color:white;
+}
+#budgetForm{
+    width: 83%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+#type{
+    width: 106%;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Travel Budget Analysis</h1>
+        <div class="form-container">
+            <form id="budgetForm">
+                <label for="budget">Total Budget (₹):</label>
+                <input type="number" id="budget" required>
+
+                <label for="duration">Trip Duration (days):</label>
+                <input type="number" id="duration" required>
+
+                <label for="type">Destination Type:</label>
+                <select id="type">
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Kerela">Kerela</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Goa">Goa</option>
+
+                </select>
+
+                <button type="button" onclick="analyzeBudget()">Analyze</button>
+            </form>
+        </div>
+        <div id="results">
+            <h3>Recommended Destinations:</h3>
+            <div id="destinations"></div>
+        </div>
+    </div>
+    <script src="budget.js"></script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  
+    <style>
+      body {
+        margin: 0;
+        background-color: #000;
+        color: #eee;
+        font-family: Poppins;
+        font-size: 12px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .log{
+        position: relative;
+        right: -864px;
+        font-family: 'Poppins';
+
+      }
+
+      header {
+        width: 1140px;
+        max-width: 80%;
+        margin: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+      }
+      header a {
+        color: #eee;
+        margin-right: 40px;
+      }
+      /* carousel */
+      .carousel {
+        height: 100vh;
+        margin-top: -50px;
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+      }
+      .carousel .list .item {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0 0 0 0;
+      }
+      .carousel .list .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .carousel .list .item .content {
+        position: absolute;
+        top: 20%;
+        width: 1140px;
+        max-width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-right: 30%;
+        box-sizing: border-box;
+        color: #fff;
+        text-shadow: 0 5px 10px #0004;
+      }
+      .carousel .list .item .author {
+        font-weight: bold;
+        letter-spacing: 10px;
+      }
+      .carousel .list .item .title,
+      .carousel .list .item .topic {
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 2em;
+        font-style: italic;
+      }
+      .carousel .list .item .topic {
+        color: white;
+      }
+      .carousel .list .item .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 130px);
+        grid-template-rows: 40px;
+        gap: 5px;
+        margin-top: 20px;
+      }
+      .carousel .list .item .buttons button {
+        border: 1px solid white;
+        background-color:transparent;
+        letter-spacing: 3px;
+        font-family: Poppins;
+        font-weight: 500;
+        border-radius: 5px;
+      }
+      .carousel .list .item .buttons button:nth-child(2) {
+        background-color: transparent;
+        border: 1px solid #fff;
+        border-radius: 5px;
+
+      }
+      /* thumbail */
+      .thumbnail {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        width: max-content;
+        z-index: 100;
+        display: flex;
+        gap: 20px;
+      }
+      .thumbnail .item {
+        width: 150px;
+        height: 220px;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .thumbnail .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .thumbnail .item .content {
+        color: #fff;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+      }
+      .thumbnail .item .content .title {
+        font-weight: 500;
+      }
+      .thumbnail .item .content .description {
+        font-size: 5%;
+      }
+      /* arrows */
+      .arrows {
+        position: absolute;
+        top: 80%;
+        right: 52%;
+        z-index: 100;
+        width: 300px;
+        max-width: 30%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .arrows button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #eee4;
+        border: none;
+        color: #fff;
+        font-family: monospace;
+        font-weight: bold;
+        transition: 0.5s;
+      }
+      .arrows button:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      /* animation */
+      .carousel .list .item:nth-child(1) {
+        z-index: 1;
+      }
+
+      /* animation text in first item */
+
+      .carousel .list .item:nth-child(1) .content .author,
+      .carousel .list .item:nth-child(1) .content .title,
+      .carousel .list .item:nth-child(1) .content .topic,
+      .carousel .list .item:nth-child(1) .content .des,
+       .carousel .list .item:nth-child(1) .content .buttons { 
+        transform: translateY(50px);
+        filter: blur(20px);
+        opacity: 0;
+        animation: showContent 0.5s 1s linear 1 forwards;
+      }
+      @keyframes showContent {
+        to {
+          transform: translateY(0px);
+          filter: blur(0px);
+          opacity: 1;
+        }
+      }
+      .carousel .list .item:nth-child(1) .content .title {
+        animation-delay: 1.2s !important;
+      }
+      .carousel .list .item:nth-child(1) .content .topic {
+        animation-delay: 1.4s !important;
+      }
+      .carousel .list .item:nth-child(1) .content .des {
+        animation-delay: 1.6s !important;
+      }
+      .carousel .list .item:nth-child(1) .content .buttons {
+        animation-delay: 1.8s !important;
+      }
+      /* create animation when next click */
+      .carousel.next .list .item:nth-child(1) img {
+        width: 150px;
+        height: 220px;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 30px;
+        animation: showImage 0.5s linear 1 forwards;
+      }
+      @keyframes showImage {
+        to {
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+        }
+      }
+
+      .carousel.next .thumbnail .item:nth-last-child(1) {
+        overflow: hidden;
+        animation: showThumbnail 0.5s linear 1 forwards;
+      }
+      .carousel.prev .list .item img {
+        z-index: 100;
+      }
+      @keyframes showThumbnail {
+        from {
+          width: 0;
+          opacity: 0;
+        }
+      }
+      .carousel.next .thumbnail {
+        animation: effectNext 0.5s linear 1 forwards;
+      }
+
+      @keyframes effectNext {
+        from {
+          transform: translateX(150px);
+        }
+      }
+
+      /* running time */
+
+      .carousel .time {
+        position: absolute;
+        z-index: 1000;
+        width: 0%;
+        height: 3px;
+        background-color: #f1683a;
+        left: 0;
+        top: 0;
+      }
+
+      .carousel.next .time,
+      .carousel.prev .time {
+        animation: runningTime 3s linear 1 forwards;
+      }
+      @keyframes runningTime {
+        from {
+          width: 100%;
+        }
+        to {
+          width: 0;
+        }
+      }
+
+      /* prev click */
+
+      .carousel.prev .list .item:nth-child(2) {
+        z-index: 2;
+      }
+
+      .carousel.prev .list .item:nth-child(2) img {
+        animation: outFrame 0.5s linear 1 forwards;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      @keyframes outFrame {
+        to {
+          width: 150px;
+          height: 220px;
+          bottom: 50px;
+          left: 50%;
+          border-radius: 20px;
+        }
+      }
+
+      .carousel.prev .thumbnail .item:nth-child(1) {
+        overflow: hidden;
+        opacity: 0;
+        animation: showThumbnail 0.5s linear 1 forwards;
+      }
+      .carousel.next .arrows button,
+      .carousel.prev .arrows button {
+        pointer-events: none;
+      }
+      .carousel.prev .list .item:nth-child(2) .content .author,
+      .carousel.prev .list .item:nth-child(2) .content .title,
+      .carousel.prev .list .item:nth-child(2) .content .topic,
+      .carousel.prev .list .item:nth-child(2) .content .des,
+      .carousel.prev .list .item:nth-child(2) .content .buttons {
+        animation: contentOut 1.5s linear 1 forwards !important;
+      }
+
+      @keyframes contentOut {
+        to {
+          transform: translateY(-150px);
+          filter: blur(20px);
+          opacity: 0;
+        }
+      }
+      @media screen and (max-width: 678px) {
+        .carousel .list .item .content {
+          padding-right: 0;
+        }
+        .carousel .list .item .content .title {
+          font-size: 30px;
+        }
+      }
+      .btn2 {
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 5px;
+        box-shadow: white;
+        z-index: 2;
+        padding: 6px 10px;
+        margin-left: 7px;
+        margin-right: 7px;
+        
+
+      }
+     
+
+      .buttons a{
+       
+         text-align: center;
+         margin: 0px;
+        color: white;
+
+      }
+
+      /* .btn {
+        background-color: #eee;
+        box-shadow: #fff2f2;
+
+      } */
+
+
+      .wname{
+        position: relative;
+        align-items: center;
+        top:10px;
+        font-size: 37px;
+        font-family: "Lobster Two", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .des{
+        font-size: 20px;
+      }
+      .btn2 a{
+         color: white;
+         text-align: center;
+         margin: 0px;
+         font-family:Poppins ;
+      }
+      /* .btn a{
+        color: rgb(0, 0, 0);
+        background-color: white;
+      } */
+      .buttons {
+        background-color: white;
+        background: transparent;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <div>
+      <h1 class="wname">PINOVIA</h1>
+      </div>
+      <nav class="log">
+        <button class="btn2"><a href="signup.html">SIGN UP</a></button>
+        <button class="btn2" ><a href="index.html">LOGIN</a></button>
+        <button class="btn2"><a href="#">Info</a></button>
+      </nav>
+      </header>
+
+
+      <!-- carousel -->
+      <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+          <div class="item">
+            <img src="rajasthan.jpg" />
+            <div class="content">
+              <div class="author"></div>
+              <div class="title">Rajasthan</div>
+              <div class="topic">"Where Kings, Deserts, and Timeless Traditions Meet."</div>
+              <div class="des">
+                Rajasthan, a realm of royal grandeur, is a mosaic of vibrant culture, golden deserts, and architectural marvels. 
+                The forts of Jodhpur, palaces of Udaipur, and the bustling bazaars of Jaipur showcase the state's regal legacy. 
+                Ride camels in the Thar Desert, listen to folk music echoing through the sands, and marvel at the intricacies of Hawa Mahal. 
+                Every corner, from the romantic Lake Pichola to the majestic Ranthambore National Park, tells a tale of valiant rulers and timeless traditions.
+              </div>
+              <div class="buttons">
+                <button ><a href="explore.html">EXPLORE</a></button>
+                <button><a href="budget.html">BUDGET ANALYSIS</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="maharashtra.jpg" />
+            <div class="content">
+            
+              <div class="title">Maharashtra</div>
+              <div class="topic">"A Symphony of History, Nature, and Vibrance."</div>
+              <div class="des">
+                From ancient caves to coastal sunsets, Maharashtra invites you to explore its dynamic diversity.
+              </div>
+              <div class="buttons">
+                <button><a href="explore2.html">EXPLORE</a></button>
+                <button><a href="budget.html">BUDGET ANALYSIS</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="Kerala-tourism.webp" />
+            <div class="content">
+              
+              <div class="title">Kerela</div>
+              <div class="topic">  God's own country</div>
+              <div class="des">
+                Nestled in lush greenery and dotted with serene backwaters, Kerala is a paradise for nature lovers. Cruise through the tranquil waters of Alleppey in a houseboat, or wander through the emerald tea plantations of Munnar. The state is a symphony of swaying palms, golden beaches like Varkala, and enchanting wildlife at Periyar Sanctuary. 
+                Its Ayurvedic therapies and exotic cuisine create a holistic experience that rejuvenates both the body and soul.
+              </div>
+              <div class="buttons">
+                <button><a href="explore3.html">EXPLORE</a></button>
+                <button><a href="budget.html">BUDGET ANALYSIS</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="goa.jpg" />
+            <div class="content">
+              
+              <div class="title">Goa</div>
+              <div class="topic">The Pearl of the Orient</div>
+              <div class="des">
+                Goa, India’s smallest state, is a vibrant tapestry of golden beaches, swaying palm trees, and lively culture.
+                 Known as the Party Capital of India, Goa offers a blend of laid-back vibes and pulsating nightlife.
+              </div>
+              <div class="buttons">
+                <button><a href="explore4.html">EXPLORE</a></button>
+                <button><a href="budget.html">BUDGET ANALYSIS</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <!-- list thumnail -->
+        <div class="thumbnail">
+          <div class="item">
+            <img src="rajasthan.jpg" />
+            <div class="content">
+              <div class="title">Rajasthan</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="maharashtra.jpg" />
+            <div class="content">
+              <div class="title">Maharashtra</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="Kerala-tourism.webp" />
+            <div class="content">
+              <div class="title">Kerela</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="goa.jpg" />
+            <div class="content">
+              <div class="title">Goa</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+          <button id="prev"><</button>
+          <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+      </div>
+
+      <script src="app.js"></script>
+    </body>
+  </html>
+  <script>
+   let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
+
+let carouselDom = document.querySelector('.carousel');
+let SliderDom = carouselDom.querySelector('.carousel .list');
+let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+let timeDom = document.querySelector('.carousel .time');
+
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+
+nextDom.onclick = function(){
+  showSlider('next');    
+}
+
+prevDom.onclick = function(){
+  showSlider('prev');    
+}
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+  next.click();
+}, timeAutoNext)
+function showSlider(type){
+  let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+  let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+  
+  if(type === 'next'){
+      SliderDom.appendChild(SliderItemsDom[0]);
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+      carouselDom.classList.add('next');
+  }else{
+      SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+      thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+      carouselDom.classList.add('prev');
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+      carouselDom.classList.remove('next');
+      carouselDom.classList.remove('prev');
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+      next.click();
+  }, timeAutoNext)
+}
+  </script>
+</body>
+    
+     
+</html>

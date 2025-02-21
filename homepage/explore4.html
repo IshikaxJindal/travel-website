@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #111222;
+      }
+
+      section {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 100px;
+        color: white;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .main-title {
+        font-size: 4em;
+        margin-bottom: 50px;
+      }
+      .main-title2 {
+        font-size: 4em;
+        margin-bottom: 50px;
+        position: relative;
+        left: 395px;
+      }
+
+      .content {
+        position: relative;
+        width: 1150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .content2 {
+        position: relative;
+        width: 1150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content .image {
+        position: relative;
+        width: 800px;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .content .image img {
+        z-index: 111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .content .text {
+        z-index: 222;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        padding: 40px;
+        max-width: 400px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        transform: translate(-80px, 50px);
+      }
+
+      .content.text h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .content2 .image2 {
+        position: relative;
+        width: 800px;
+        height: 400px;
+        overflow: hidden;
+        right: -127px;
+      }
+
+      .content2 .image2 img {
+        z-index: 111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .content2 .text2 {
+        position: absolute;
+        z-index: 222;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        padding: 40px;
+        max-width: 400px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        transform: translate(-393px, 34px);
+      }
+
+      .content2 .text2 h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+      .seperation {
+        height: 7px;
+        background-color: rgb(62, 61, 61);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="sec1">
+      <div class="container">
+        <h2 class="main-title">Kuskem Waterfalls</h2>
+        <div class="content">
+          <div class="image">
+            <img src="gex1.webp" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              Located in the Cotigao Wildlife Sanctuary in South Goa, Kuskem
+              Waterfalls is one of the most serene and unexplored waterfalls in
+              the state. Its unspoiled beauty and tranquil surroundings make it
+              a hidden gem for nature lovers and adventure enthusiasts.
+              Highlights: • Pristine Setting: Kuskem Waterfalls is surrounded by
+              lush greenery and dense forests, providing a peaceful and
+              rejuvenating environment. • Seasonal Beauty: The waterfall is
+              seasonal, which means it is at its best during the monsoon season
+              (June to September). During this time, the water cascades down
+              from a considerable height, creating a stunning spectacle. What to
+              Do: • Trekking: The journey to the waterfall involves a short but
+              adventurous trek through the sanctuary, making it a delightful
+              experience for trekkers. • Picnics: The serene surroundings are
+              ideal for picnics and relaxing amidst nature. How to Reach: Kuskem
+              Waterfalls is about 12 km from Chaudi, the nearest town. You can
+              hire a taxi or drive to the village of Kuskem, from where a short
+              trek leads to the waterfall.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="seperation"></div>
+
+    <section class="sec2">
+      <div class="container2">
+        <h2 class="main-title2">Arvalem Caves</h2>
+        <div class="content2">
+          <div class="text2">
+            <p>
+              The Arvalem Caves (also known as Pandava Caves) and the Arvalem
+              Waterfall are located in Sanquelim, North Goa, combining
+              historical intrigue with natural beauty. This site offers a
+              perfect mix of heritage and scenic charm. Arvalem Caves: •
+              Historical Significance: These rock-cut caves are believed to date
+              back to the 6th century and are associated with Buddhist monks and
+              the Pandavas from the Mahabharata. Their historical and
+              mythological links make them fascinating to explore. •
+              Architecture: The caves feature simple yet impressive rock-cut
+              chambers with niches and a central cell. The interiors are stark
+              and minimalistic, reflecting ancient Buddhist architectural
+              styles. Arvalem Waterfalls: • Natural Beauty: Located close to the
+              caves, the Arvalem Waterfall cascades down a height of 50 meters
+              amidst dense greenery. It’s especially
+            </p>
+          </div>
+          <div class="image2">
+            <img src="gex2.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="seperation"></div>
+
+    <script>
+      ScrollReveal({
+        reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 200,
+      });
+      ScrollReveal().reveal(".main-title", { delay: 100, origin: "left" });
+      ScrollReveal().reveal(".sec1 .image", { delay: 200, origin: "bottom" });
+      ScrollReveal().reveal(".text", { delay: 300, origin: "right" });
+
+      ScrollReveal().reveal(".main-title2", { delay: 100, origin: "right" });
+      ScrollReveal().reveal(".sec2 .image2", { delay: 200, origin: "top" });
+      ScrollReveal().reveal(".text2", { delay: 300, origin: "left" });
+
+      ScrollReveal().reveal(".main-title", { delay: 100, origin: "left" });
+      ScrollReveal().reveal(".sec3 .image", { delay: 200, origin: "bottom" });
+      ScrollReveal().reveal(".text", { delay: 300, origin: "right" });
+    </script>
+  </body>
+</html>

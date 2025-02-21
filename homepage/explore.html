@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins",sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #111222;
+        }
+
+        section{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 100px;
+            color: white;
+
+        }
+        .container{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .main-title{
+            font-size: 4em;
+            margin-bottom: 50px;
+        }
+        .main-title2{
+            font-size: 4em;
+            margin-bottom: 50px;
+            position: relative;
+            left:395px;
+        }
+
+
+        .content{
+            position: relative;
+            width: 1150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content2{
+            position: relative;
+            width: 1150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content .image{
+            position: relative;
+            width:800px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .content .image img{
+            z-index: 111;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .content .text{
+            z-index: 222;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transform: translate(-80px,50px);
+        }
+
+        .content.text h3{
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content2 .image2{
+            position: relative;
+            width:800px;
+            height: 400px;
+            overflow: hidden;
+            right: -150px;
+        }
+
+        .content2 .image2 img{
+            z-index: 111;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .content2 .text2{
+            position: absolute;
+            z-index: 222;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transform:translate(-393px, 34px);
+        }
+
+        .content2 .text2 h3{
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .seperation {
+        height: 7px;
+        background-color: rgb(62, 61, 61);
+      }
+    </style>
+</head>
+<body>
+    <section class="sec1">
+        <div class="container" >
+        <h2 class="main-title">BHANGARH FORT </h2>
+        <div class="content">
+            <div class="image">
+                <img src="rex.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>HISTORY:</h3>
+                <p>
+                    Built in the 17th century by Raja Bhagwant Das, the younger brother of Man Singh I, a general of the Mughal Emperor Akbar.   
+                    Designed as a fortified city with palaces, temples, and a thriving population.   
+                    The city mysteriously declined and became deserted in the 18th century.   
+                </p>
+                <h3>RUMORS:</h3>
+                <p>
+                    Many visitors and locals claim to have experienced paranormal activities, including strange noises, unexplained feelings of 
+                    dread, and sudden electronic equipment failures.   
+                    The Archaeological Survey of India has placed a sign prohibiting 
+                    visitors from staying after sunset, citing the paranormal activity as the reason.   
+
+                </p>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="seperation"></div>
+
+    <section class="sec3">
+        <div class="container2" >
+            <h2 class="main-title2">Jaswant Thada </h2>
+        <div class="content2">
+         
+            <div class="text2">
+                <p>Architectural Marvel: The cenotaph is a stunning example of white marble architecture, adorned with intricate 
+                    carvings and delicate jalis (latticework).
+                    Royal Connection: It serves as the cremation ground for the royal family of Marwar, making it a sacred site.
+                    Historical Portraits: The walls are adorned with portraits of the Rathore rulers, offering a glimpse into the 
+                    rich history of the region.
+                    Serene Ambiance: The peaceful atmosphere and beautiful surroundings make it a popular spot for meditation and relaxation.
+                     </p>
+            </div>
+            <div class="image2">
+                <img src="rex2.jpg" alt="">
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script>
+
+        ScrollReveal({
+            reset:true,
+            distance:'60px',
+            duration:2500,
+            delay:200
+        });
+        ScrollReveal().reveal(".main-title", {delay:100, origin:'left'});
+        ScrollReveal().reveal(".sec1 .image", {delay:200, origin:'bottom'});
+        ScrollReveal().reveal(".text", {delay:300, origin:'right'});
+
+        ScrollReveal().reveal(".main-title2", {delay:100, origin:'right'});
+        ScrollReveal().reveal(".sec3 .image2", {delay:200, origin:'top'});
+        ScrollReveal().reveal(".text2", {delay:300, origin:'left'});
+
+        // ScrollReveal().reveal(".main-title", {delay:100, origin:'left'});
+        // ScrollReveal().reveal(".sec3 .image", {delay:200, origin:'bottom'});
+        // ScrollReveal().reveal(".text", {delay:300, origin:'right'});
+        
+    </script>
+    
+</body>
+</html>

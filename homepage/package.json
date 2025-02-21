@@ -1,0 +1,11 @@
+{
+  "name": "travel-website",
+  "version": "1.0.0",
+  "description": "yes",
+  "main": "index.js",
+  "scripts": {
+    "Start": "node index"
+  },
+  "author": "",
+  "license": "ISC"
+}

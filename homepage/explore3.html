@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins",sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #111222;
+        }
+
+        section{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 100px;
+            color: white;
+
+        }
+        .container{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .main-title{
+            font-size: 4em;
+            margin-bottom: 50px;
+        }
+        .main-title2{
+            font-size: 4em;
+            margin-bottom: 50px;
+            position: relative;
+            left:395px;
+        }
+
+
+        .content{
+            position: relative;
+            width: 1150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content2{
+            position: relative;
+            width: 1150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content .image{
+            position: relative;
+            width:800px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .content .image img{
+            z-index: 111;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .content .text{
+            z-index: 222;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transform: translate(-80px,50px);
+        }
+
+        .content.text h3{
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content2 .image2{
+            position: relative;
+            width:800px;
+            height: 400px;
+            overflow: hidden;
+            right: -127px;
+        }
+
+        .content2 .image2 img{
+            z-index: 111;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .content2 .text2{
+            position: absolute;
+            z-index: 222;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transform:translate(-393px, 34px);
+        }
+
+        .content2 .text2 h3{
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .seperation {
+        height: 7px;
+        background-color: rgb(62, 61, 61);
+      }
+    </style>
+</head>
+<body>
+    <section class="sec1">
+        <div class="container" >
+        <h2 class="main-title">Guhagar: A Serene Coastal Retreat </h2>
+        <div class="content">
+            <div class="image">
+                <img src="mex.jpg" alt="">
+            </div>
+            <div class="text">
+                <p>Guhagar, a picturesque village on the Konkan coast, is a 
+                    hidden gem known for its untouched beaches, verdant greenery, and traditional Konkani culture. 
+                    It is an ideal destination for those seeking tranquility and a break from bustling tourist hubs. 
+                    The Guhagar Beach is the highlight of this quaint town, offering a pristine shoreline perfect for leisurely 
+                    walks and breathtaking sunsets. Unlike crowded beaches in 
+                    Maharashtra, Guhagar remains unspoiled, providing an immersive experience of nature’s serenity. </p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="seperation"></div>
+
+    <section class="sec2">
+        <div class="container2" >
+            <h2 class="main-title2">Lonar Crater Lake</h2>
+        <div class="content2">
+           
+            <div class="text2">
+                <p>Lonar Crater Lake, located in the Buldhana district, is one of Maharashtra's most unique natural wonders. 
+                    Formed by a meteorite impact over 50,000 years ago, this lake is a rare hyper-velocity impact crater in basaltic rock, 
+                    drawing geologists and nature lovers from across the globe. Its oval shape, surrounded by lush greenery, 
+                    creates a surreal landscape that feels almost otherworldly.
+                    The lake's water, being both saline and alkaline, supports unique ecosystems. 
+                    Visitors can spot diverse bird species and vegetation adapted to its unusual environment. 
+                    Surrounding the lake are several ancient temples, such as the Daitya Sudan Temple, 
+                    a fine example of Hemadpanthi architecture, which add historical and cultural depth to the site.
+                    </p>
+            </div>
+            <div class="image2">
+                <img src="mex2.jpg" alt="">
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="seperation"></div>
+    <script>
+
+        ScrollReveal({
+            reset:true,
+            distance:'60px',
+            duration:2500,
+            delay:200
+        });
+        ScrollReveal().reveal(".main-title", {delay:100, origin:'left'});
+        ScrollReveal().reveal(".sec1 .image", {delay:200, origin:'bottom'});
+        ScrollReveal().reveal(".text", {delay:300, origin:'right'});
+
+        ScrollReveal().reveal(".main-title2", {delay:100, origin:'right'});
+        ScrollReveal().reveal(".sec2 .image2", {delay:200, origin:'top'});
+        ScrollReveal().reveal(".text2", {delay:300, origin:'left'});
+
+        ScrollReveal().reveal(".main-title", {delay:100, origin:'left'});
+        ScrollReveal().reveal(".sec3 .image", {delay:200, origin:'bottom'});
+        ScrollReveal().reveal(".text", {delay:300, origin:'right'});
+        
+    </script>
+    
+</body>
+</html>
